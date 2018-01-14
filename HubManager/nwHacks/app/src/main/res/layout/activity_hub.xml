@@ -7,6 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.hfad.hubmanager.HubActivity">
 
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -34,28 +35,68 @@
 
 
     <LinearLayout
+    android:id="@+id/task_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@+id/app_bar"
+    android:layout_marginTop="10dp"
+    android:weightSum="2">
+
+    <ListView
+        android:id="@+id/task_list_id"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:entries="@array/Tasks_array"
+        android:layout_weight="1"/>
+
+    <ListView
+        android:id="@+id/collab_list_id"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:entries="@array/Collab_array"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edits"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_below="@+id/app_bar"
         android:layout_marginTop="10dp"
+        android:layout_below="@+id/task_list"
+        android:layout_weight="1"
         android:weightSum="2">
 
-        <ListView
-            android:id="@+id/task_list_id"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:entries="@array/Tasks_array"
-            android:layout_weight="1"/>
 
-        <ListView
-            android:id="@+id/collab_list_id"
+        <EditText
+            android:id="@+id/edit_task"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:entries="@array/Collab_array"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter task"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edit_collab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter collab"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/add_task_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Task"
+        />
 
 
 </RelativeLayout>
