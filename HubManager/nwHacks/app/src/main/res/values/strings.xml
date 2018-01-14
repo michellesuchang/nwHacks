@@ -23,7 +23,12 @@
     <string name="title_create_new_hub">Create New Hub</string>
 
     <string name="title_activity_hub">Hub</string>
-    <string name="large_text">
-        "I like Chinese food."
-    </string>
+    <string-array name="Tasks_array">
+        <item><b>Task</b></item>
+    </string-array>
+
+    <string-array name="Collab_array">
+        <item><b>Owner</b></item>
+    </string-array>
+
 </resources>

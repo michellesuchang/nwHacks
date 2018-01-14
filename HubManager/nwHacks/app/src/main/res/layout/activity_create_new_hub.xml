@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,18 +17,20 @@
         android:hint="Hub Name"
         android:inputType="textPersonName|textVisiblePassword"
         android:layout_marginTop="0dp"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/collab_email"
+        android:id="@+id/collab_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Add Member Emails"
+        android:hint="Add Member Name"
         android:inputType="textEmailAddress|textVisiblePassword"
         android:layout_below="@+id/hub_name"
         android:layout_marginTop="10dp"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/add_collab" />
 
     <Button
         android:id="@+id/add_collab"
@@ -38,9 +41,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        android:layout_toRightOf="@+id/collab_email"
-        android:layout_alignBaseline="@+id/collab_email"
-         />
+        android:layout_alignTop="@+id/collab_name"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/save_hub_info"
@@ -49,5 +51,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Save Changes" />
+
 
 </RelativeLayout>

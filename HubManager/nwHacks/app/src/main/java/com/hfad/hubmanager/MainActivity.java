@@ -9,9 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
+
+//    DynamoDBMapper dynamoDBMapper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         AWSMobileClient.getInstance().initialize(this).execute();
         Button loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
+
+
+//        AmazonDynamoDBClient dynamoDBClient = new AmazonDynamoDBClient(AWSMobileClient.getInstance().getCredentialsProvider());
+//        this.dynamoDBMapper = DynamoDBMapper.builder()
+//                .dynamoDBClient(dynamoDBClient)
+//                .awsConfiguration(AWSMobileClient.getInstance().getConfiguration())
+//                .build();
     }
 
     @Override
